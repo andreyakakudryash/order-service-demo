@@ -99,4 +99,4 @@ bash ./scripts/wrk_test.sh
 
 ---
 
-**Видео демонстрация:** [Ссылка на видео]
+**Видео демонстрация:** [https://drive.google.com/file/d/1VE3Ro-57leUh-oZQqqW8YcIckZf-Ub0U/view?usp=sharing]
