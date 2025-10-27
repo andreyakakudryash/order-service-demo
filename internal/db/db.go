@@ -35,15 +35,18 @@ func SaveOrder(dbPool *pgxpool.Pool, order models.Order, data []byte) error {
 	return err
 }
 
-func LoadCacheFromDB(db *pgxpool.Pool) {
+func LoadCacheFromDB(db *pgxpool.Pool) int {
 	ctx := context.Background()
 	rows, err := db.Query(ctx, "SELECT order_number, order_data FROM orders")
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("Failed to load orders from database: %v", err)
 	}
 	defer rows.Close()
 
+	count := 0
 	cache.CacheMu.Lock()
+	defer cache.CacheMu.Unlock()
+
 	for rows.Next() {
 		var uid string
 		var data json.RawMessage
@@ -52,9 +55,14 @@ func LoadCacheFromDB(db *pgxpool.Pool) {
 			continue
 		}
 		cache.Cache[uid] = string(data)
+		count++
 	}
-	cache.CacheMu.Unlock()
-	log.Println("Cache loaded from DB")
+
+	if err := rows.Err(); err != nil {
+		log.Printf("Rows iteration error: %v", err)
+	}
+
+	return count
 }
 
 func isValidJSON(data []byte) bool {

@@ -29,12 +29,10 @@ func main() {
 	cache.Init()
 	log.Println("Cache initialized")
 
-	// Загрузка кэша из БД
 	log.Println("Loading cache from database...")
-	db.LoadCacheFromDB(dbPool)
-	log.Printf("Cache loaded: orders")
+	ordersCount := db.LoadCacheFromDB(dbPool)
+	log.Printf("Cache loaded: %d orders", ordersCount)
 
-	// Подключение к NATS и подписка
 	log.Println("Connecting to NATS...")
 	service.InitNATSAndSubscribe(cfg.NATSURL, dbPool)
 
