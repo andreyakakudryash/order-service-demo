@@ -88,7 +88,7 @@ go run ./cmd/publish/main.go
 
 
 
-### Стресс-тест (опционально)
+### Стресс-тест
 
 ```bash
 
@@ -99,4 +99,4 @@ bash ./scripts/wrk_test.sh
 
 ---
 
-**Видео демонстрация:** [https://drive.google.com/file/d/1VE3Ro-57leUh-oZQqqW8YcIckZf-Ub0U/view?usp=sharing]
+**Видео демонстрация:** [https://drive.google.com/file/d/1v6Q-zEYgLoANbuap_JxFqF2mvFmFpE43/view?usp=sharing]
