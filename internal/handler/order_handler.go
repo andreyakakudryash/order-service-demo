@@ -39,13 +39,13 @@ func UIHandler(w http.ResponseWriter, r *http.Request) {
 			
 			body {
 				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				background: linear-gradient(135deg, #8a9be6ff 0%, #4b86a2ff 100%);
 				min-height: 100vh;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				padding: 20px;
-			}
+			}ы
 			
 			.container {
 				width: 100%;
@@ -111,7 +111,7 @@ func UIHandler(w http.ResponseWriter, r *http.Request) {
 			button {
 				width: 100%;
 				padding: 14px;
-				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				background: linear-gradient(135deg, #8a9be6ff 0%, #4b86a2ff 100%);
 				color: white;
 				border: none;
 				border-radius: 12px;
@@ -135,7 +135,7 @@ func UIHandler(w http.ResponseWriter, r *http.Request) {
 	<body>
 		<div class="container">
 			<div class="search-card">
-				<h1>🔍 Order Viewer</h1>
+				<h1>Order Viewer</h1>
 				<p class="subtitle">Введите ID заказа для просмотра деталей</p>
 				<form method="POST" action="/ui">
 					<div class="input-group">
@@ -171,7 +171,7 @@ func GetOrderUI(w http.ResponseWriter, r *http.Request) {
 				* { margin: 0; padding: 0; box-sizing: border-box; }
 				body {
 					font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-					background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+					background: linear-gradient(135deg, #8a9be6ff 0%, #4b86a2ff 100%);
 					min-height: 100vh;
 					display: flex;
 					align-items: center;
@@ -201,7 +201,7 @@ func GetOrderUI(w http.ResponseWriter, r *http.Request) {
 				a {
 					display: inline-block;
 					padding: 12px 30px;
-					background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+					background: linear-gradient(135deg, #8a9be6ff 0%, #4b86a2ff 100%);
 					color: white;
 					text-decoration: none;
 					border-radius: 12px;
@@ -243,7 +243,7 @@ func GetOrderUI(w http.ResponseWriter, r *http.Request) {
 			
 			body {
 				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				background: linear-gradient(135deg, #8a9be6ff 0%, #4b86a2ff 100%);
 				min-height: 100vh;
 				padding: 40px 20px;
 			}
@@ -427,7 +427,7 @@ func GetOrderUI(w http.ResponseWriter, r *http.Request) {
 	delivery := order["delivery"].(map[string]interface{})
 	html += `
 			<div class="section">
-				<div class="section-title">🚚 Доставка</div>
+				<div class="section-title">Доставка</div>
 				<div class="info-grid">
 					<div class="info-item">
 						<div class="info-label">Имя</div>
@@ -463,7 +463,7 @@ func GetOrderUI(w http.ResponseWriter, r *http.Request) {
 	payment := order["payment"].(map[string]interface{})
 	html += `
 			<div class="section">
-				<div class="section-title">💳 Оплата</div>
+				<div class="section-title">Оплата</div>
 				<div class="info-grid">
 					<div class="info-item">
 						<div class="info-label">Transaction</div>
@@ -497,7 +497,7 @@ func GetOrderUI(w http.ResponseWriter, r *http.Request) {
 			</div>
 			
 			<div class="section">
-				<div class="section-title">🛍️ Товары</div>
+				<div class="section-title">Товары</div>
 				<table class="items-table">
 					<thead>
 						<tr>

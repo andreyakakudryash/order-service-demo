@@ -57,13 +57,13 @@ go mod download
 ### Шаг 1: Установить переменную окружения
 
 ```bash
-export DB_CONN="postgres://postgres:postgres@localhost:5432/orders?sslmode=disable"
+export DB_CONN="postgresql://order_user:pass@localhost:5432/order_db?sslmode=disable"
 ```
 
 ### Шаг 2: Запустить NATS Streaming (Терминал 1)
 
 ```bash
-nats-streaming-server -cluster_id test-cluster
+nats-streaming-server
 ```
 
 Должно появиться: `Starting nats-streaming-server...`
